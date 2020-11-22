@@ -17,10 +17,8 @@ do
   for ak in ${aks}
   do
     aklu=`aws iam get-access-key-last-used --access-key-id $ak --query "AccessKeyLastUsed.LastUsedDate" --output text  | tr '\t' '\n'`
-    echo $aklu
     if  [ "None" != "$aklu" ] ;then
       start_date=`date -d "${aklu:0:10}" +%s `
-      echo $start_date
       if  [ $deadline_date -gt $start_date ] ;then
         result_code=1
         result_msg="IAM Check: You have aksk which has NOT been used in the past 30 days yet."

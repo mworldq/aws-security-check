@@ -2,13 +2,13 @@
 # test.sh
 
 # Init Result
-#echo '' > /tmp/check_result.log
-#
-## Exec the rules
-#for f in ./rules/*.sh ;
-#  do
-#    [ -x "$f" ] && [ ! -d "$f" ] && "$f" ;
-#  done
+echo '' > /tmp/check_result.log
+
+# Exec the rules
+for f in ./rules/*.sh ;
+  do
+    [ -x "$f" ] && [ ! -d "$f" ] && "$f" ;
+  done
 
 printf "+++++++++++++++++++++++++++++++++\n"
 printf "++++++++++   Summary   ++++++++++\n"
