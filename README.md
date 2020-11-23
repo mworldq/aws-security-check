@@ -1,6 +1,20 @@
 # aws-security-check
 This is a program for check AWS service security.
 
+-------
+Download & Execute:
+1. Download:
+    - wget https://github.com/mworldq/aws-security-check/archive/master.zip
+    - unzip master.zip
+    - cd <Download>/aws-security-check-master
+    - chmod +x ./check.sh
+2. Setup environment：
+    - AWS CLI 1.18+ 
+    - setup aws configure
+3. Execute script:
+    - sh ./check.sh
+
+------
 Check Rules:
 - 检查root用户是否启用了MFA
 - 检查是否有安全组向全世界放开了不必要的端口（22/3306/Redis等）
