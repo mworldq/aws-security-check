@@ -3,6 +3,8 @@
 # result_code = 1, Hit, Danger
 # result_code = 0, Miss, Safe
 
+printf "vvvvvvvvvv Execute Check - $(basename $0) Start: vvvvvvvvvv\n "
+
 users=`aws iam list-users --query "Users[*].UserName" --output text  | tr '\t' '\n' | wc -l`
 
 password_used=`aws iam list-users --query "Users[*].PasswordLastUsed" --output text  | tr '\t' '\n' | wc -l`
@@ -16,5 +18,5 @@ if [ "$users" -gt "$password_used" ];then
 fi
 echo $result_code','$result_msg >> /tmp/check_result.log
 
-printf '%s' $result_msg
-printf '\n'
+printf "%s\n" "$result_msg"
+printf "^^^^^^^^^^ Execute Check - $(basename $0) Completed. ^^^^^^^^^^\n "

@@ -3,6 +3,8 @@
 # result_code = 1, Hit, Danger
 # result_code = 0, Miss, Safe
 
+printf "vvvvvvvvvv Execute Check - $(basename $0) Start: vvvvvvvvvv\n "
+
 result_code=0
 result_msg="RDS Backup Check: You have a backup strategy."
 
@@ -20,5 +22,5 @@ fi
 
 echo $result_code','$result_msg >> /tmp/check_result.log
 
-printf '%s' $result_msg
-printf '\n'
+printf "%s\n" "$result_msg"
+printf "^^^^^^^^^^ Execute Check - $(basename $0) Completed. ^^^^^^^^^^\n "
