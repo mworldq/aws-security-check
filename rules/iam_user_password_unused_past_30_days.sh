@@ -22,7 +22,8 @@ do
   if  [ $deadline_date -gt $start_date ] ;then
     result_code=1
     result_msg="IAM Check: The activated user has NOT used the password in the past 30 days"
-    result_detail=$result_detail" Password:$password_used"
+    username=`aws iam list-users --query "Users[?PasswordLastUsed=='2020-11-12T06:17:59Z'].UserName" --output text  | tr '\t' '\n'`
+    result_detail=$result_detail" UserName:$username"
   fi
 done
 
