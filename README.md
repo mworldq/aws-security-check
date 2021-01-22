@@ -17,7 +17,7 @@ Download & Execute:
 ------
 Check Rules:
 - 检查root用户是否启用了MFA
-- 检查是否有安全组向全世界放开了不必要的端口（22/3306/Redis等）
+- 检查是否有安全组向全世界放开了不必要的端口（22/3306/Redis/Memcached/Hadoop/Rsync/Telnet/RDP/MongoDB/ElasticSearch/Jenkins/FTP/VNC/Jupyter/CouchDB/SMB等）
 - 是否使用了AWS Backup，并有执行的备份策略
 - 是否开启了Cloud Trail
 - 是否存在未使用的安全组
